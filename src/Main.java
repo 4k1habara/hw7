@@ -4,9 +4,10 @@ public class Main {
         int total = 0;
         int forMonth = 15000;
         int month = 0;
-        while (total < 2_459_000) {
+        int goal = 2_459_000;
+        while (total < goal) {
             month++;
-            total = total + (total / 100) + forMonth;
+            total = total + forMonth;
             System.out.println("Месяц " + month + ", сумма накоплений равна " + total);
         }
 
@@ -25,10 +26,11 @@ public class Main {
 
         //task3
         int population = 12_000_000;
-        int birthRate = population / 1000 * 17;
-        int deathRate = population / 1000 * 8;
-        for (int i = 1; i < 11; i++) {
-            population = population + birthRate - deathRate;
+        int birthRate = 17;
+        int deathRate = 8;
+        int years = 10;
+        for (int i = 1; i < years + 1; i++) {
+            population = population +  birthRate*population/1000 - deathRate*population/1000;
             System.out.println("Год " + i + ", численность населения составляет " + population);
         }
 
@@ -36,9 +38,11 @@ public class Main {
         total = 0;
         forMonth = 15000;
         month = 0;
-        while (total < 12_000_000) {
+        int bankRate = 7;
+        goal = 12_000_000;
+        while (total < goal) {
             month++;
-            total = total + (total / 100 * 7) + forMonth;
+            total = total + (total / 100 * bankRate) + forMonth;
             System.out.println("Месяц " + month + ", сумма накоплений равна " + total);
         }
         System.out.println(month + " месяцев");
@@ -47,9 +51,11 @@ public class Main {
         total = 0;
         forMonth = 15000;
         month = 0;
-        while (total < 12_000_000) {
+        goal = 12_000_000;
+        bankRate = 7;
+        while (total < goal) {
             month++;
-            total = total + (total / 100 * 7) + forMonth;
+            total = total + (total / 100 * bankRate) + forMonth;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + ", сумма накоплений равна " + total);
             }
@@ -60,9 +66,11 @@ public class Main {
         total = 0;
         forMonth = 15000;
         month = 0;
-        while (month < (12 * 9)) {
+        bankRate = 7;
+        years = 9;
+        while (month < (12 * years)) {
             month++;
-            total = total + (total / 100 * 7) + forMonth;
+            total = total + (total / 100 * bankRate) + forMonth;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + ", сумма накоплений равна " + total);
                 System.out.println(month + " месяцев");
